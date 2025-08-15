@@ -13,5 +13,5 @@ function isSame(arr1, arr2) {
   }
   return true;
 }
-const result = isSame([1, 4, 5], [1, 4, 5]);
+const result = isSame([1, 4, 4], [1, 4, 5]);
 console.log(result);
