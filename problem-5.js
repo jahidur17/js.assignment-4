@@ -6,7 +6,7 @@ function resultReport(marks) {
     return {
       finalScore: 0,
       pass: 0,
-      fail: 0,
+      fail: 0
     };
   }
   let sum = 0;
@@ -21,12 +21,12 @@ function resultReport(marks) {
     }
   }
   let average = sum / marks.length;
-  average = Math.floor(average);
+  average = Math.round(average);
   return {
     finalScore: average,
     pass: totalPass,
-    fail: totalFail,
+    fail: totalFail
   };
 }
-const result = resultReport([100]);
+const result = resultReport([98, 87, 67, 91, 92, 33, 87]);
 console.log(result);

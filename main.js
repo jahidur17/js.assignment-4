@@ -18,6 +18,7 @@ function onlyCharacter(str) {
 }
 
 
+
 function bestTeam(player1, player2) {
   if (typeof player1 !== "object" || typeof player2 !== "object") {
     return "Invalid";
@@ -34,6 +35,7 @@ function bestTeam(player1, player2) {
 }
 
 
+
 function isSame(arr1, arr2) {
   if (!Array.isArray(arr1) || !Array.isArray(arr2)) {
     return "Invalid";
@@ -48,5 +50,38 @@ function isSame(arr1, arr2) {
     }
   }
   return true;
+}
+
+
+
+function resultReport(marks) {
+  if (!Array.isArray(marks)) {
+    return "Invalid";
+  }
+  if (marks.length === 0) {
+    return {
+      finalScore: 0,
+      pass: 0,
+      fail: 0
+    };
+  }
+  let sum = 0;
+  let totalPass = 0;
+  let totalFail = 0;
+  for (let mark of marks) {
+    sum = mark + sum;
+    if (mark >= 40) {
+      totalPass++;
+    } else {
+      totalFail++;
+    }
+  }
+  let average = sum / marks.length;
+  average = Math.round(average);
+  return {
+    finalScore: average,
+    pass: totalPass,
+    fail: totalFail
+  };
 }
 
